@@ -3,7 +3,7 @@
   "ModelMetadata": {
     "Author": "",
     "DateCreated": "Aug 25, 2022, 01:47 PM",
-    "DateLastModified": "Sep 21, 2022, 03:45 PM",
+    "DateLastModified": "Oct 05, 2022, 02:32 PM",
     "Description": "",
     "AWSService": "Amazon DynamoDB",
     "Version": "3.0"
@@ -44,10 +44,6 @@
         },
         {
           "AttributeName": "Address",
-          "AttributeType": "S"
-        },
-        {
-          "AttributeName": "Quantity",
           "AttributeType": "S"
         }
       ],
