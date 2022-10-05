@@ -1,0 +1,1 @@
+SELECT * from "OnlineShop"."GSI2" where GSI2_PK='C#ironman' and GSI2_SK between '2022-09-22 00:00:00' and '2022-09-22 24:00:00';

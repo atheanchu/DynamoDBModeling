@@ -3,7 +3,7 @@
   "ModelMetadata": {
     "Author": "",
     "DateCreated": "Aug 25, 2022, 01:47 PM",
-    "DateLastModified": "Sep 22, 2022, 12:00 PM",
+    "DateLastModified": "Oct 04, 2022, 04:05 PM",
     "Description": "",
     "AWSService": "Amazon DynamoDB",
     "Version": "3.0"
@@ -43,6 +43,10 @@
           "AttributeType": "S"
         },
         {
+          "AttributeName": "STATUS",
+          "AttributeType": "S"
+        },
+        {
           "AttributeName": "Email",
           "AttributeType": "S"
         },
@@ -72,10 +76,6 @@
         },
         {
           "AttributeName": "Amount",
-          "AttributeType": "S"
-        },
-        {
-          "AttributeName": "Status",
           "AttributeType": "S"
         }
       ],
@@ -258,21 +258,7 @@
         },
         {
           "PK": {
-            "S": "P#ipad"
-          },
-          "SK": {
-            "S": "W#us"
-          },
-          "Entity": {
-            "S": "STOCK"
-          },
-          "Quantity": {
-            "S": "1000"
-          }
-        },
-        {
-          "PK": {
-            "S": "P#ipad"
+            "S": "P#iphone"
           },
           "SK": {
             "S": "W#korea"
@@ -282,6 +268,20 @@
           },
           "Quantity": {
             "S": "100"
+          }
+        },
+        {
+          "PK": {
+            "S": "P#iphone"
+          },
+          "SK": {
+            "S": "W#us"
+          },
+          "Entity": {
+            "S": "STOCK"
+          },
+          "Quantity": {
+            "S": "1000"
           }
         },
         {
@@ -415,7 +415,7 @@
             "S": "O#22222"
           },
           "SK": {
-            "S": "I#11111"
+            "S": "I#22222"
           },
           "Entity": {
             "S": "INVOICE"
@@ -444,12 +444,9 @@
             "S": "C#ironman"
           },
           "GSI1_SK": {
-            "S": "SH#2022-09-23 12:00:00"
+            "S": "SH#2022-09-23 14:00:00"
           },
-          "Date": {
-            "S": "2022-09-23 12:00:00"
-          },
-          "Status": {
+          "STATUS": {
             "S": "Complete"
           }
         },
@@ -467,12 +464,9 @@
             "S": "C#ironman"
           },
           "GSI1_SK": {
-            "S": "SH#2022-09-30 12:00:00"
+            "S": "SH#2022-09-30 08:00:00"
           },
-          "Date": {
-            "S": "2022-09-30 12:00:00"
-          },
-          "Status": {
+          "STATUS": {
             "S": "Complete"
           }
         }

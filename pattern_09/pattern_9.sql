@@ -1,0 +1,1 @@
+SELECT * from "OnlineShop"."GSI1" where GSI1_PK='P#iphone' and GSI1_SK between '2022-09-22 00:00:00' and '2022-09-22 24:00:00';

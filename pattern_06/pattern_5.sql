@@ -1,1 +1,0 @@
-SELECT * from "OnlineShop" where PK='O#11111' and SK='C#ironman';
