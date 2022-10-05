@@ -1,0 +1,11 @@
+{
+  "country" : {
+    "S": "United States"
+  },
+  "zipcode": {
+    "S": "95123"
+  }, 
+  "city": {
+    "S": "Cupertino"
+  }
+}

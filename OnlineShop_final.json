@@ -1,0 +1,672 @@
+{
+  "ModelName": "OnlineShop",
+  "ModelMetadata": {
+    "Author": "",
+    "DateCreated": "Aug 25, 2022, 01:47 PM",
+    "DateLastModified": "Aug 25, 2022, 10:53 PM",
+    "Description": "",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "OnlineShopSample",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "PK",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SK",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "GSI1-PK",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "GSI1-SK",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "GSI2-PK",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "GSI2-SK",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Entity",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Email",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Detail",
+          "AttributeType": "M"
+        },
+        {
+          "AttributeName": "Name",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Quantity",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Price",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Address",
+          "AttributeType": "M"
+        },
+        {
+          "AttributeName": "Date",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Amount",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "WarehouseID",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Type",
+          "AttributeType": "S"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "GSI1",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "GSI1-PK",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "GSI1-SK",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "GSI2",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "GSI2-PK",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "GSI2-SK",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "PK": {
+            "S": "c#ironman"
+          },
+          "SK": {
+            "S": "c#ironman"
+          },
+          "Entity": {
+            "S": "Customer"
+          },
+          "Email": {
+            "S": "ironman@avengers.com"
+          },
+          "Name": {
+            "S": "Ironman"
+          }
+        },
+        {
+          "PK": {
+            "S": "p#11111"
+          },
+          "SK": {
+            "S": "p#11111"
+          },
+          "Entity": {
+            "S": "Product"
+          },
+          "Detail": {
+            "M": {
+              "Name": {
+                "S": "ipad"
+              }
+            }
+          },
+          "Price": {
+            "S": "400"
+          }
+        },
+        {
+          "PK": {
+            "S": "p#11111"
+          },
+          "SK": {
+            "S": "w#11111"
+          },
+          "Entity": {
+            "S": "Stock"
+          },
+          "Quantity": {
+            "S": "100"
+          },
+          "GSI1-PK": {
+            "S": "w#11111"
+          },
+          "GSI1-SK": {
+            "S": "p#11111"
+          }
+        },
+        {
+          "PK": {
+            "S": "w#11111"
+          },
+          "SK": {
+            "S": "w#11111"
+          },
+          "Entity": {
+            "S": "Warehouse"
+          },
+          "Address": {
+            "M": {
+              "country": {
+                "S": "United States"
+              },
+              "zipcode": {
+                "S": "95123"
+              },
+              "city": {
+                "S": "Cupertino"
+              }
+            }
+          }
+        },
+        {
+          "PK": {
+            "S": "c#hulk"
+          },
+          "SK": {
+            "S": "c#hulk"
+          },
+          "Entity": {
+            "S": "Customer"
+          },
+          "Email": {
+            "S": "hulk@avengers.com"
+          },
+          "Name": {
+            "S": "Hulk"
+          }
+        },
+        {
+          "PK": {
+            "S": "c#thor"
+          },
+          "SK": {
+            "S": "c#thor"
+          },
+          "Entity": {
+            "S": "Customer"
+          },
+          "Email": {
+            "S": "thor@avengers.com"
+          },
+          "Name": {
+            "S": "Thor"
+          }
+        },
+        {
+          "PK": {
+            "S": "p#22222"
+          },
+          "SK": {
+            "S": "p#22222"
+          },
+          "Entity": {
+            "S": "Product"
+          },
+          "Detail": {
+            "M": {
+              "Name": {
+                "S": "iphone"
+              }
+            }
+          },
+          "Price": {
+            "S": "1200"
+          }
+        },
+        {
+          "PK": {
+            "S": "p#22222"
+          },
+          "SK": {
+            "S": "w#11111"
+          },
+          "Entity": {
+            "S": "Stock"
+          },
+          "Quantity": {
+            "S": "50"
+          },
+          "GSI2-PK": {
+            "S": "w#11111"
+          },
+          "GSI2-SK": {
+            "S": "p#22222"
+          }
+        },
+        {
+          "PK": {
+            "S": "p#22222"
+          },
+          "SK": {
+            "S": "w#22222"
+          },
+          "Entity": {
+            "S": "Stock"
+          },
+          "Quantity": {
+            "S": "200"
+          },
+          "GSI2-PK": {
+            "S": "w#22222"
+          },
+          "GSI2-SK": {
+            "S": "p#22222"
+          }
+        },
+        {
+          "PK": {
+            "S": "w#22222"
+          },
+          "SK": {
+            "S": "w#22222"
+          },
+          "Entity": {
+            "S": "Warehouse"
+          },
+          "Address": {
+            "M": {
+              "country": {
+                "S": "China"
+              },
+              "zipcode": {
+                "S": "95123"
+              },
+              "city": {
+                "S": "Beijing"
+              }
+            }
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "c#ironman"
+          },
+          "Entity": {
+            "S": "Order"
+          },
+          "Date": {
+            "S": "2022-08-25 14:07:00"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "p#11111"
+          },
+          "Entity": {
+            "S": "OrderDetail"
+          },
+          "Quantity": {
+            "S": "2"
+          },
+          "Price": {
+            "S": "800"
+          },
+          "GSI1-PK": {
+            "S": "p#11111"
+          },
+          "GSI1-SK": {
+            "S": "2022-08-25 14:07:00"
+          },
+          "GSI2-PK": {
+            "S": "c#ironman"
+          },
+          "GSI2-SK": {
+            "S": "2022-08-25 14:07:00"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "p#22222"
+          },
+          "Entity": {
+            "S": "OrderDetail"
+          },
+          "Quantity": {
+            "S": "1"
+          },
+          "Price": {
+            "S": "1200"
+          },
+          "GSI1-PK": {
+            "S": "p#22222"
+          },
+          "GSI1-SK": {
+            "S": "2022-08-25 14:07:00"
+          },
+          "GSI2-PK": {
+            "S": "c#ironman"
+          },
+          "GSI2-SK": {
+            "S": "2022-08-25 14:07:00"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "i#11111"
+          },
+          "Entity": {
+            "S": "Invoice"
+          },
+          "Date": {
+            "S": "2022-08-25 14:13:00"
+          },
+          "Amount": {
+            "S": "2000"
+          },
+          "GSI1-PK": {
+            "S": "i#11111"
+          },
+          "GSI1-SK": {
+            "S": "i#11111"
+          },
+          "GSI2-PK": {
+            "S": "c#ironman"
+          },
+          "GSI2-SK": {
+            "S": "2022-08-25 14:13:00"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "sh#11111"
+          },
+          "Entity": {
+            "S": "Shipment"
+          },
+          "Address": {
+            "M": {
+              "country": {
+                "S": "United States"
+              },
+              "zipcode": {
+                "S": "95123"
+              },
+              "city": {
+                "S": "Cupertino"
+              }
+            }
+          },
+          "Date": {
+            "S": "2022-08-25 14:18:00"
+          },
+          "WarehouseID": {
+            "S": "w#11111"
+          },
+          "Type": {
+            "S": "Express"
+          },
+          "GSI1-PK": {
+            "S": "sh#11111"
+          },
+          "GSI1-SK": {
+            "S": "sh#11111"
+          },
+          "GSI2-PK": {
+            "S": "w#11111"
+          },
+          "GSI2-SK": {
+            "S": "sh#11111"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "sh#22222"
+          },
+          "Entity": {
+            "S": "Shipment"
+          },
+          "Address": {
+            "M": {
+              "country": {
+                "S": "China"
+              },
+              "zipcode": {
+                "S": "95123"
+              },
+              "city": {
+                "S": "Beijing"
+              }
+            }
+          },
+          "Date": {
+            "S": "2022-08-25 14:19:00"
+          },
+          "WarehouseID": {
+            "S": "w#22222"
+          },
+          "Type": {
+            "S": "Express"
+          },
+          "GSI1-PK": {
+            "S": "sh#22222"
+          },
+          "GSI1-SK": {
+            "S": "sh#22222"
+          },
+          "GSI2-PK": {
+            "S": "w#22222"
+          },
+          "GSI2-SK": {
+            "S": "sh#22222"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#22222"
+          },
+          "SK": {
+            "S": "c#hulk"
+          },
+          "Entity": {
+            "S": "Order"
+          },
+          "Date": {
+            "S": "2022-08-25 21:27:00"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#22222"
+          },
+          "SK": {
+            "S": "p#22222"
+          },
+          "Entity": {
+            "S": "OrderDetail"
+          },
+          "Quantity": {
+            "S": "2"
+          },
+          "Price": {
+            "S": "2400"
+          },
+          "GSI1-PK": {
+            "S": "p#22222"
+          },
+          "GSI1-SK": {
+            "S": "2022-08-25 21:27:00"
+          },
+          "GSI2-PK": {
+            "S": "c#hulk"
+          },
+          "GSI2-SK": {
+            "S": "2022-08-25 21:27:00"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#22222"
+          },
+          "SK": {
+            "S": "i#22222"
+          },
+          "Entity": {
+            "S": "Invoice"
+          },
+          "Date": {
+            "S": "2022-08-25 21:27:00"
+          },
+          "Amount": {
+            "S": "2400"
+          },
+          "GSI1-PK": {
+            "S": "i#22222"
+          },
+          "GSI1-SK": {
+            "S": "i#22222"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "shp#11111"
+          },
+          "Entity": {
+            "S": "Delivery"
+          },
+          "Quantity": {
+            "S": "1"
+          },
+          "GSI1-PK": {
+            "S": "sh#11111"
+          },
+          "GSI1-SK": {
+            "S": "p#11111"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "shp#12222"
+          },
+          "Entity": {
+            "S": "Delivery"
+          },
+          "Quantity": {
+            "S": "1"
+          },
+          "GSI1-PK": {
+            "S": "sh#22222"
+          },
+          "GSI1-SK": {
+            "S": "p#22222"
+          }
+        },
+        {
+          "PK": {
+            "S": "o#11111"
+          },
+          "SK": {
+            "S": "shp#13333"
+          },
+          "Entity": {
+            "S": "Delivery"
+          },
+          "Quantity": {
+            "S": "1"
+          },
+          "GSI1-PK": {
+            "S": "sh#11111"
+          },
+          "GSI1-SK": {
+            "S": "p#11111"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "BillingMode": "PROVISIONED",
+      "ProvisionedCapacitySettings": {
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "AutoScalingRead": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        },
+        "AutoScalingWrite": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        }
+      }
+    }
+  ]
+}

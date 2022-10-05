@@ -1,0 +1,1 @@
+SELECT * from "OnlineShop" where PK='P#iphone' and SK='P#iphone';

@@ -1,0 +1,1 @@
+SELECT * from "OnlineShop" where PK='P#iphone' and begins_with(SK, 'W#');

@@ -1,0 +1,276 @@
+{
+  "ModelName": "OnlineShop",
+  "ModelMetadata": {
+    "Author": "",
+    "DateCreated": "Aug 25, 2022, 01:47 PM",
+    "DateLastModified": "Sep 21, 2022, 05:02 PM",
+    "Description": "",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "OnlineShop",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "PK",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SK",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "Entity",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Email",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Name",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Price",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "Detail",
+          "AttributeType": "M"
+        },
+        {
+          "AttributeName": "Address",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Quantity",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Date",
+          "AttributeType": "S"
+        }
+      ],
+      "TableData": [
+        {
+          "PK": {
+            "S": "C#ironman"
+          },
+          "SK": {
+            "S": "C#ironman"
+          },
+          "Entity": {
+            "S": "CUSTOMER"
+          },
+          "Email": {
+            "S": "ironman@avengers.com"
+          },
+          "Name": {
+            "S": "ironman"
+          }
+        },
+        {
+          "PK": {
+            "S": "C#hulk"
+          },
+          "SK": {
+            "S": "C#hulk"
+          },
+          "Entity": {
+            "S": "CUSTOMER"
+          },
+          "Email": {
+            "S": "hulk@avengers.com"
+          },
+          "Name": {
+            "S": "hulk"
+          }
+        },
+        {
+          "PK": {
+            "S": "C#thor"
+          },
+          "SK": {
+            "S": "C#thor"
+          },
+          "Entity": {
+            "S": "CUSTOMER"
+          },
+          "Email": {
+            "S": "thor@avengers.com"
+          },
+          "Name": {
+            "S": "thor"
+          }
+        },
+        {
+          "PK": {
+            "S": "P#ipad"
+          },
+          "SK": {
+            "S": "P#ipad"
+          },
+          "Entity": {
+            "S": "PRODUCT"
+          },
+          "Price": {
+            "N": "1500"
+          },
+          "Detail": {
+            "M": {
+              "Name": {
+                "S": "ipad"
+              }
+            }
+          }
+        },
+        {
+          "PK": {
+            "S": "P#iphone"
+          },
+          "SK": {
+            "S": "P#iphone"
+          },
+          "Entity": {
+            "S": "PRODUCT"
+          },
+          "Price": {
+            "N": "1000"
+          },
+          "Detail": {
+            "M": {
+              "Name": {
+                "S": "iphone"
+              }
+            }
+          }
+        },
+        {
+          "PK": {
+            "S": "P#mac"
+          },
+          "SK": {
+            "S": "P#mac"
+          },
+          "Entity": {
+            "S": "PRODUCT"
+          },
+          "Price": {
+            "N": "2000"
+          },
+          "Detail": {
+            "M": {
+              "Name": {
+                "S": "mac"
+              }
+            }
+          }
+        },
+        {
+          "PK": {
+            "S": "W#korea"
+          },
+          "SK": {
+            "S": "W#korea"
+          },
+          "Entity": {
+            "S": "WAREHOUSE"
+          },
+          "Address": {
+            "S": "Korea"
+          }
+        },
+        {
+          "PK": {
+            "S": "W#us"
+          },
+          "SK": {
+            "S": "W#us"
+          },
+          "Entity": {
+            "S": "WAREHOUSE"
+          },
+          "Address": {
+            "S": "US"
+          }
+        },
+        {
+          "PK": {
+            "S": "P#ipad"
+          },
+          "SK": {
+            "S": "W#us"
+          },
+          "Entity": {
+            "S": "STOCK"
+          },
+          "Quantity": {
+            "S": "1000"
+          }
+        },
+        {
+          "PK": {
+            "S": "P#ipad"
+          },
+          "SK": {
+            "S": "W#korea"
+          },
+          "Entity": {
+            "S": "STOCK"
+          },
+          "Quantity": {
+            "S": "100"
+          }
+        },
+        {
+          "PK": {
+            "S": "O#11111"
+          },
+          "SK": {
+            "S": "C#ironman"
+          },
+          "Entity": {
+            "S": "ORDER"
+          },
+          "Date": {
+            "S": "2022-09-22 14:00:00"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "BillingMode": "PROVISIONED",
+      "ProvisionedCapacitySettings": {
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "AutoScalingRead": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        },
+        "AutoScalingWrite": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        }
+      }
+    }
+  ]
+}
